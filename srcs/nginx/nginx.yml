@@ -15,13 +15,27 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: mynginx
-        ports:
-        - name: http
-          containerPort: 80
-        - name: https
-          containerPort: 443
-        - name: ssh
-          containerPort: 22
-        imagePullPolicy: Never
+        - name: nginx
+          image: mynginx
+          ports:
+            - name: http
+              containerPort: 80
+            - name: https
+              containerPort: 443
+            - name: ssh
+              containerPort: 22
+          imagePullPolicy: Never
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  selector:
+    app: nginx
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30000
