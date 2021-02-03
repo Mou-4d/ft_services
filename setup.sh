@@ -15,3 +15,9 @@ kubectl apply -f srcs/configMap.yml
 
 #apply  yaml files for each deplyomenet
 kubectl apply -f srcs/nginx/nginx.yml
+
+
+# CREATE DATABASE wordpress;
+# CREATE USER 'wordpressuser'@'localhost' IDENTIFIED BY '1234';
+# GRANT ALL ON wordpress.* TO 'wordpressuser'@'localhost' IDENTIFIED BY '1234' WITH GRANT OPTION;
+# FLUSH PRIVILEGES;
