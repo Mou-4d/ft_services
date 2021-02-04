@@ -3,10 +3,10 @@ minikube start --vm-driver=virtualbox
 
 
 eval $(minikube -p minikube docker-env)
-# kubectl delete deploy nginx-deployment
 
 #build all images
-docker build -t mynginx srcs/nginx/
+docker build -t nginx srcs/nginx/
+docker build -t mysql srcs/mysql/
 
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/namespace.yaml
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/metallb.yaml
@@ -15,9 +15,5 @@ kubectl apply -f srcs/configMap.yml
 
 #apply  yaml files for each deplyomenet
 kubectl apply -f srcs/nginx/nginx.yml
+kubectl apply -f srcs/mysql/mysql.yml
 
-
-# CREATE DATABASE wordpress;
-# CREATE USER 'wordpressuser'@'localhost' IDENTIFIED BY '1234';
-# GRANT ALL ON wordpress.* TO 'wordpressuser'@'localhost' IDENTIFIED BY '1234' WITH GRANT OPTION;
-# FLUSH PRIVILEGES;
