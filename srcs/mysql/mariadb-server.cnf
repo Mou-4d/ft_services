@@ -1,4 +1,3 @@
-#
 # These groups are read by MariaDB server.
 # Use it for options that only the server (but not clients) should see
 
@@ -7,10 +6,9 @@
 
 # this is only for the mysqld standalone daemon
 [mysqld]
-# skip-networking
-
+skip-networking = false
 # Galera-related settings
-[galera]
+# [galera]
 # Mandatory settings
 #wsrep_on=ON
 #wsrep_provider=

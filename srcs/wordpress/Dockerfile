@@ -1,6 +1,7 @@
 FROM alpine:3.11
 
-RUN apk update && apk add nginx php7-fpm php7 php7-mysqli php7-mbstring php7-json php7-session openrc
+RUN apk update && apk add nginx openrc
+RUN apk add php7-fpm php7 php7-mysqli php7-mbstring php7-json php7-session
 
 COPY wordpress.sh .
 COPY default.conf ./etc/nginx/conf.d/default.conf
