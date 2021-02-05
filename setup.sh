@@ -21,4 +21,4 @@ kubectl apply -f srcs/mysql/mysql.yml
 kubectl apply -f srcs/wordpress/wordpress.yml
 kubectl apply -f srcs/phpmyadmin/phpmyadmin.yml
 
-       
+         
