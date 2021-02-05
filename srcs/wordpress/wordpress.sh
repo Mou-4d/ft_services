@@ -15,6 +15,7 @@ adduser -D -g 'www' www
 chown -R www:www /var/www/localhost/htdocs/wordpress
 chown -R www:www /var/lib/nginx
 
+rc-status
 touch /run/openrc/softlevel
 rc-service php-fpm7 start
 nginx -g 'daemon off;'

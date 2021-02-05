@@ -6,9 +6,9 @@ mkdir -p /var/lib/mysql /run/mysqld
 exec /usr/bin/mysqld -u root & sleep 5
 
 #CREATE USER
-mysql -u root -e "CREATE USER 'mouad'@'%' IDENTIFIED BY 'dev';GRANT ALL PRIVILEGES ON * . * TO 'mouad'@'%';FLUSH PRIVILEGES;"
+mysql -u root -e "CREATE USER 'mouadz'@'%' IDENTIFIED BY 'dev';GRANT ALL PRIVILEGES ON * . * TO 'mouadz'@'%';FLUSH PRIVILEGES;"
 #CREATE DATABASE
-mysql -u root -e "CREATE DATABASE wp_db;GRANT ALL PRIVILEGES ON wp_db.* TO 'mouad'@'%' IDENTIFIED BY 'dev';FLUSH PRIVILEGES;"
+mysql -u root -e "CREATE DATABASE wp_db;GRANT ALL PRIVILEGES ON wp_db.* TO 'mouadz'@'%' IDENTIFIED BY 'dev';FLUSH PRIVILEGES;"
 
 #keep container running
 sleep infinity
