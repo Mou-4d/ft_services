@@ -1,6 +1,6 @@
 FROM alpine:3.11
 
-RUN apk update && apk add nginx openssl wget 
+RUN apk update && apk add nginx
 
 COPY wordpress.sh .
 COPY default.conf .
