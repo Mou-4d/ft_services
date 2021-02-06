@@ -11,6 +11,6 @@ mv wp-config.php /var/www/localhost/htdocs/wordpress/
 
 rc-status
 touch /run/openrc/softlevel
-rc-service php-fpm7 start
+rc-service php-fpm7 start 
 nginx -g 'daemon off;'
 
