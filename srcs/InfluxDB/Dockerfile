@@ -5,3 +5,5 @@ FROM alpine:3.11
 COPY influxdb.sh .
 
 ENTRYPOINT sh influxdb.sh
+
+EXPOSE

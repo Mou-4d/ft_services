@@ -1,38 +1,38 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: influxdb
+  name: ftps
   labels:
-    app: influxdb
+    app: ftps
   annotations:
     metallb.universe.tf/allow-shared-ip: shared
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
-    app: influxdb
+    app: ftps
   ports:
-  - name: influxdb
-    port: 
+  - name: ftps
+    port: 21
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: influxdb-deployment
+  name: ftps-deployment
   labels:
-    app: influxdb
+    app: ftps
 spec:
   selector:
     matchLabels:
-      app: influxdb
+      app: ftps
   template:
     metadata:
       labels:
-        app: influxdb
+        app: ftps
     spec:
       containers:
-      - name: influxdb
-        image: influxdb
+      - name: ftps
+        image: ftps
         imagePullPolicy: Never
         ports:
-        - name: influxdb
-          containerPort: 
+        - name: ftps
+          containerPort: 21
