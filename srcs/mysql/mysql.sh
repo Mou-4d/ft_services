@@ -10,5 +10,11 @@ mysql -u root -e "CREATE USER 'mouadz'@'%' IDENTIFIED BY 'dev';GRANT ALL PRIVILE
 #CREATE DATABASE
 mysql -u root -e "CREATE DATABASE wp_db;GRANT ALL PRIVILEGES ON wp_db.* TO 'mouadz'@'%' IDENTIFIED BY 'dev';FLUSH PRIVILEGES;"
 
+mv telegraf.conf etc/
+
+rc-status
+touch /run/openrc/softlevel
+rc-service telegraf start
+
 #keep container running
 sleep infinity
