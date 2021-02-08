@@ -8,11 +8,12 @@ metadata:
     metallb.universe.tf/allow-shared-ip: shared
 spec:
   type: ClusterIP
+  clusterIP: 10.106.170.193
   selector:
     app: influxdb
   ports:
   - name: influxdb
-    port: 
+    port: 8086
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -35,4 +36,4 @@ spec:
         imagePullPolicy: Never
         ports:
         - name: influxdb
-          containerPort: 
+          containerPort: 8086
