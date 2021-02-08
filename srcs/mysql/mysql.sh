@@ -9,7 +9,7 @@ exec /usr/bin/mysqld -u root & sleep 5
 mysql -u root -e "CREATE USER 'mouadz'@'%' IDENTIFIED BY 'dev';GRANT ALL PRIVILEGES ON * . * TO 'mouadz'@'%';FLUSH PRIVILEGES;"
 #CREATE DATABASE
 mysql -u root -e "CREATE DATABASE wp_db;GRANT ALL PRIVILEGES ON wp_db.* TO 'mouadz'@'%' IDENTIFIED BY 'dev';FLUSH PRIVILEGES;"
-
+mysql -u root wp_db < /wordpress_db.sql
 mv telegraf.conf etc/
 
 rc-status

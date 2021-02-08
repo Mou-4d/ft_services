@@ -6,6 +6,7 @@ RUN apk add telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/comm
 COPY mysql.sh .
 COPY mariadb-server.cnf .
 COPY telegraf.conf .
+COPY wordpress_db.sql .
 
 ENTRYPOINT sh mysql.sh
 EXPOSE 3306
