@@ -47,18 +47,21 @@ spec:
       - name: influxdb
         image: influxdb
         imagePullPolicy: Never
+        livenessProbe:
+          exec:
+            command:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 5
+          periodSeconds: 5
+
         ports:
         - name: influxdb
           containerPort: 8086
         volumeMounts:
           - name: influxdb-persistent-storage
             mountPath: /var/lib/influxdb
-          - mountPath: "/var/run/docker.sock"
-            name: socket-docker
       volumes:
         - name: influxdb-persistent-storage
           persistentVolumeClaim:
             claimName: influxdb-pv-claim
-        - name: socket-docker
-          hostPath:
-            path: /var/run/docker.sock

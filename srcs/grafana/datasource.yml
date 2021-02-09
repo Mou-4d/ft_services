@@ -1,0 +1,7 @@
+apiVersion: 1
+datasources:
+  - name: InfluxDB
+    url: http://10.106.170.193:8086
+    type: influxdb
+    database: influxdb
+    access: proxy
