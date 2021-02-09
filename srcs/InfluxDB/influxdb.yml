@@ -53,7 +53,12 @@ spec:
         volumeMounts:
           - name: influxdb-persistent-storage
             mountPath: /var/lib/influxdb
+          - mountPath: "/var/run/docker.sock"
+            name: socket-docker
       volumes:
         - name: influxdb-persistent-storage
           persistentVolumeClaim:
             claimName: influxdb-pv-claim
+        - name: socket-docker
+          hostPath:
+            path: /var/run/docker.sock
