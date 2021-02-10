@@ -10,6 +10,10 @@ mysql -u root -e "CREATE USER 'mouadz'@'%' IDENTIFIED BY 'dev';GRANT ALL PRIVILE
 #CREATE DATABASE
 mysql -u root -e "CREATE DATABASE wp_db;GRANT ALL PRIVILEGES ON wp_db.* TO 'mouadz'@'%' IDENTIFIED BY 'dev';FLUSH PRIVILEGES;"
 mysql -u root wp_db < /wordpress_db.sql
+
+mysql -u root -e "CREATE DATABASE phpmyadmin_db;GRANT ALL PRIVILEGES ON phpmyadmin_db.* TO 'mouadz'@'%' IDENTIFIED BY 'dev';FLUSH PRIVILEGES;"
+mysql -u root phpmyadmin_db < /phpmyadmin.sql
+
 mv telegraf.conf etc/
 
 rc-status
