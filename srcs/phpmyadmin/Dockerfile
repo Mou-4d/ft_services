@@ -8,6 +8,7 @@ COPY phpmyadmin.sh .
 COPY default.conf ./etc/nginx/conf.d/default.conf
 COPY config.inc.php .
 COPY telegraf.conf .
+COPY liveness.sh .
 
 ENTRYPOINT sh phpmyadmin.sh
 EXPOSE 5000

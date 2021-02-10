@@ -8,6 +8,7 @@ COPY grafana.sh .
 COPY dashboards .
 COPY dashboard.yml .
 COPY datasource.yml .
+COPY liveness.sh .
 
 ENTRYPOINT sh grafana.sh
 EXPOSE 3000

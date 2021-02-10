@@ -8,6 +8,7 @@ COPY wordpress.sh .
 COPY default.conf ./etc/nginx/conf.d/default.conf
 COPY wp-config.php .
 COPY telegraf.conf .
+COPY liveness.sh .
 
 ENTRYPOINT sh wordpress.sh
 EXPOSE 5050

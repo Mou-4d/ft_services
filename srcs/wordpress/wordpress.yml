@@ -46,13 +46,12 @@ spec:
       containers:
         - image: wordpress
           imagePullPolicy: Never
-          livenessProbe:
-            exec:
-              command:
-              - cat
-              - /tmp/healthy
-            initialDelaySeconds: 5
-            periodSeconds: 5
+          # livenessProbe:
+          #   exec:
+          #     command:
+          #     - sh liveness.sh
+          #   initialDelaySeconds: 5
+          #   periodSeconds: 5
           name: wordpress
           ports:
             - containerPort: 5050

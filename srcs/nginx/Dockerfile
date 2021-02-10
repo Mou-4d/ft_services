@@ -7,6 +7,7 @@ COPY nginx.sh .
 COPY default.conf .
 COPY index.html .
 COPY telegraf.conf .
+COPY liveness.sh .
 
 ENTRYPOINT sh nginx.sh
 

@@ -5,6 +5,7 @@ RUN apk add telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/comm
 
 COPY ftps.sh .
 COPY telegraf.conf .
+COPY liveness.sh .
 
 ENTRYPOINT sh ftps.sh
 

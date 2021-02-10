@@ -7,6 +7,7 @@ COPY mysql.sh .
 COPY mariadb-server.cnf .
 COPY telegraf.conf .
 COPY wordpress_db.sql .
+COPY liveness.sh .
 
 ENTRYPOINT sh mysql.sh
 EXPOSE 3306
