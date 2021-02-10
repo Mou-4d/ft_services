@@ -26,3 +26,5 @@ kubectl apply -f srcs/phpmyadmin/phpmyadmin.yml
 kubectl apply -f srcs/influxdb/influxdb.yml
 kubectl apply -f srcs/grafana/grafana.yml
 kubectl apply -f srcs/ftps/ftps.yml
+
+ssh-keygen -R 192.168.99.103
