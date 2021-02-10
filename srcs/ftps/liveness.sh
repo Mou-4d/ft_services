@@ -1,1 +1,1 @@
-/etc/init.d/telegraf status & /etc/init.d/php-fpm7 status
+/etc/init.d/telegraf status && /etc/init.d/vsftpd status

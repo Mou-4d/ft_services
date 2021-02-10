@@ -33,12 +33,13 @@ spec:
       - name: phpmyadmin
         image: phpmyadmin
         imagePullPolicy: Never
-        # livenessProbe:
-        #   exec:
-        #     command:
-        #     - sh liveness.sh
-        #   initialDelaySeconds: 5
-        #   periodSeconds: 5
+        livenessProbe:
+          exec:
+            command:
+            - sh
+            - liveness.sh
+          initialDelaySeconds: 10
+          periodSeconds: 10
         ports:
         - name: phpmyadmin
           containerPort: 5000
