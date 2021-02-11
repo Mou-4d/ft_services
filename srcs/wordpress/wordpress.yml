@@ -15,19 +15,6 @@ spec:
     app: wordpress
   type: LoadBalancer
 ---
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: wp-pv-claim
-  labels:
-    app: wordpress
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 20Gi
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -57,11 +44,4 @@ spec:
           ports:
             - containerPort: 5050
               name: wordpress
-          volumeMounts:
-            - name: wordpress-persistent-storage
-              mountPath: /var/www/html
-      volumes:
-        - name: wordpress-persistent-storage
-          persistentVolumeClaim:
-            claimName: wp-pv-claim
       
