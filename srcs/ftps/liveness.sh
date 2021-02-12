@@ -1,1 +1,1 @@
-/etc/init.d/telegraf status && /etc/init.d/vsftpd status
+/etc/init.d/telegraf status

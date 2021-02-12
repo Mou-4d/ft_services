@@ -11,8 +11,21 @@ spec:
   selector:
     app: ftps
   ports:
-  - name: ftps
+  - name: ftps-data
+    port: 20
+    targetPort: 20
+  - name: ftps-control
     port: 21
+    targetPort: 21
+  - name: min
+    port: 21009
+    targetPort: 21009
+  - name: mid
+    port: 21010
+    targetPort: 21010
+  - name: mix
+    port: 21011
+    targetPort: 21011
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -41,5 +54,13 @@ spec:
           initialDelaySeconds: 10
           periodSeconds: 10
         ports:
-        - name: ftps
-          containerPort: 21
+        - containerPort: 20
+          name: ftps-data
+        - containerPort: 21
+          name: ftps-control
+        - containerPort: 21009
+          name: min
+        - containerPort: 21010
+          name: mid
+        - containerPort: 21011
+          name: max
