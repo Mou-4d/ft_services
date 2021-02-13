@@ -51,5 +51,5 @@ spec:
               command:
               - sh
               - liveness.sh
-            initialDelaySeconds: 10
+            initialDelaySeconds: 100
             periodSeconds: 10

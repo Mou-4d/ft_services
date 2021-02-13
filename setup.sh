@@ -1,5 +1,5 @@
 minikube delete
-minikube start --vm-driver=virtualbox
+minikube start --vm-driver=virtualbox --memory=3072
 
 
 eval $(minikube -p minikube docker-env)
@@ -28,3 +28,5 @@ kubectl apply -f srcs/grafana/grafana.yml
 kubectl apply -f srcs/ftps/ftps.yml
 
 ssh-keygen -R 192.168.99.103
+
+minikube dashboard
