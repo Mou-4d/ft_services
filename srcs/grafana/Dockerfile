@@ -5,10 +5,8 @@ RUN apk add telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/comm
 
 COPY telegraf.conf .
 COPY grafana.sh .
-COPY dashboards .
-COPY dashboard.yml .
-COPY datasource.yml .
 COPY liveness.sh .
+COPY grafana.db .
 
 ENTRYPOINT sh grafana.sh
 EXPOSE 3000
